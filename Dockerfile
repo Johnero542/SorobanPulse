@@ -32,7 +32,7 @@ RUN cargo build --release
 # gcr.io/distroless/cc-debian12 — digest pinned 2025-07-14. Update via Dependabot or manually with:
 # docker inspect --format='{{index .RepoDigests 0}}' gcr.io/distroless/cc-debian12
 # distroless/cc ships glibc + libssl + ca-certificates, so no apt-get layer is needed.
-FROM gcr.io/distroless/cc-debian12:nonroot@sha256:9b8f8b1a1b6b0b6f3f0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e0e
+FROM gcr.io/distroless/cc-debian12:nonroot@sha256:9dac0a79194e45a7da0158a9c6da57b217585af0786db3845d1f0ec1a0dd182f
 
 WORKDIR /app
 COPY --from=builder --chown=nonroot:nonroot /app/target/release/soroban-pulse .
